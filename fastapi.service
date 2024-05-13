@@ -1,0 +1,11 @@
+[Unit]
+Description=FastAPI server
+After=multi-user.target
+
+[Service]
+ExecStart= /bin/bash -c 'cd /home/ubuntu/fastapi-ec2 && source env/bin/activate && fastapi run'
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
